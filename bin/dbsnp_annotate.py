@@ -80,6 +80,9 @@ my_parser.add_argument('-chr_22',
 my_parser.add_argument('-chr_X',
                        type=str,
                        help='dbsnp per chromosome')
+my_parser.add_argument('-chr_Y',
+                       type=str,
+                       help='dbsnp per chromosome')
 
 args = my_parser.parse_args()
 sample = args.sample
@@ -107,6 +110,7 @@ chr_20 = args.chr_20
 chr_21 = args.chr_21
 chr_22 = args.chr_22
 chr_X = args.chr_X
+chr_Y = args.chr_Y
 
 #read in all the per chromosome dbsnps and put the pos of variants into a list
 
@@ -115,7 +119,7 @@ def snp_dict(chr_tab):
     dbsnp_chrom = pd.read_csv(chr_tab,sep='\t',header=None)
     return list(dbsnp_chrom[1])
 
-chr_dict = {'1':chr_1,'2': chr_2, '3': chr_3, '4':chr_4, '5':chr_5, '6':chr_6,'7':chr_7, '8':chr_8, '9':chr_9, '10': chr_10,'11':chr_11, '12': chr_12, '13':chr_13, '14':chr_14, '15':chr_15, '16': chr_16, '17':chr_17, '18':chr_18,'19':chr_19, '20':chr_20, '21':chr_21, '22':chr_22, 'X':chr_X}
+chr_dict = {'1':chr_1,'2': chr_2, '3': chr_3, '4':chr_4, '5':chr_5, '6':chr_6,'7':chr_7, '8':chr_8, '9':chr_9, '10': chr_10,'11':chr_11, '12': chr_12, '13':chr_13, '14':chr_14, '15':chr_15, '16': chr_16, '17':chr_17, '18':chr_18,'19':chr_19, '20':chr_20, '21':chr_21, '22':chr_22, 'X':chr_X, 'Y':chr_Y}
 snps = {}
 for key in chr_dict.keys():
     snps[key] = snp_dict(chr_dict[key])
