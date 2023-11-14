@@ -1,5 +1,4 @@
 #! /usr/bin/env nextflow
-
 nextflow.enable.dsl=1
 
 //define channels from input file
