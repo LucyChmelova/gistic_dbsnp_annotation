@@ -16,7 +16,7 @@ process  CloudOS_MTR_input{
     tag"$sample"
     publishDir "${params.outdir}/$sample", mode: 'copy'
     maxForks 900
-    errorStrategy 'ignore'
+    //errorStrategy 'ignore'
     maxRetries 9
     
     input:
