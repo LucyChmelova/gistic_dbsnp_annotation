@@ -131,9 +131,9 @@ print(gistic_input.columns)
 gistic_input.index = gistic_input.reset_index(drop=True)
 num_markers = list()
 for row in range(len(gistic_input.index)):
-    min = gistic_input[2][row]
-    max = gistic_input[3][row]
-    chr = gistic_input[1][row]
+    min = gistic_input[1][row]
+    max = gistic_input[2][row]
+    chr = gistic_input[0][row]
     tmp = snps[chr]
     num_markers.append(len(set([i for i in tmp if (i >= min) and (i <= max)])))
     
